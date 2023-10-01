@@ -143,38 +143,61 @@ window.addEventListener('keydown', e=> {
     }
 })
 
+// Event handlers for swipes
+// $(document).ready(function () {
+    // Event handlers for swipes
+//     $(".board").on("swiperight", function () {
+//         console.log("ArrowRight");
+//         inputDir.x = 1;
+//         inputDir.y = 0;
+//     });
 
-// NEW FINCTIONS FOR BUTTONS 
+//     $(".board").on("swipeleft", function () {
+//         console.log("ArrowLeft");
+//         inputDir.x = -1;
+//         inputDir.y = 0;
+//     });
 
-const up = document.querySelector('#up');
-const left = document.querySelector('#left');
-const right = document.querySelector('#right');
-const down = document.querySelector('#down');
+//     $(".board").on("swipeup", function () {
+//         console.log("ArrowUp");
+//         inputDir.x = 0;
+//         inputDir.y = -1;
+//     });
 
-function upKey(){
-up.addEventListener('click', function(){
-    inputDir.x = 0;
-    inputDir.y = -1;
-})
-};
+//     $(".board").on("swipedown", function () {
+//         console.log("ArrowDown");
+//         inputDir.x = 0;
+//         inputDir.y = 1;
+//     });
+// });
 
-function leftKey(){
-left.addEventListener('click', function(){
-    inputDir.x = -1;
-    inputDir.y = 0;
-})
-}
+// const board = document.querySelector('.board');
+const hammertime = new Hammer(board);
 
-function rightkey(){
-right.addEventListener('click', function(){
+hammertime.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+
+hammertime.on('swiperight', function () {
+    console.log("ArrowRight");
     inputDir.x = 1;
     inputDir.y = 0;
-})
-}
+});
 
-function downKey(){
-down.addEventListener('click', function(){
+hammertime.on('swipeleft', function () {
+    console.log("ArrowLeft");
+    inputDir.x = -1;
+    inputDir.y = 0;
+});
+
+hammertime.on('swipeup', function () {
+    console.log("ArrowUp");
+    inputDir.x = 0;
+    inputDir.y = -1;
+});
+
+hammertime.on('swipedown', function () {
+    console.log("ArrowDown");
     inputDir.x = 0;
     inputDir.y = 1;
-})
-}
+});
+
+

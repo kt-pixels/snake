@@ -14,16 +14,15 @@ body {
     justify-content: center;
 }
 
+
 .board {
     background-image: url(../wood-2065366_1280.jpg);
     border: 20px solid rgb(66, 28, 0);
     width: 90vmin;
-    height: 92vmin;
-    /* backdrop-filter: blur(20px); */
+    height: 90vmin; /* Updated height to make it square */
     display: grid;
     grid-template-rows: repeat(18, 1fr);
     grid-template-columns: repeat(18, 1fr);
-    /* display: none; */
 }
 
 #scoreBox {
